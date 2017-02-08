@@ -50,12 +50,12 @@
             <div class="collapse navbar-collapse" id="example">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">
+                        <a href="#" data-toggle="modal" data-target="#modalAuth">
                             <i class="fa enter"></i> Войти
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-toggle="modal" data-target="#modalRegistration">
                             <i class="fa register"></i> Регистрация
                         </a>
                     </li>
@@ -145,12 +145,74 @@
         </footer>
 
 
+        <!-- Всплывающее окно авторизации -->
+        <div id="modalAuth" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Войти</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="main-error alert alert-error hide"></div>
+                        <p>
+                            <input name="username" type="text" class="form-control input-block-level" placeholder="Название команды" autofocus>
+                            <input name="password" type="password" class="form-control input-block-level" placeholder="Пароль">
+                            <label class="checkbox">
+                                <input name="remember-me" type="checkbox" value="remember-me" checked> Запомнить меня
+                            </label>
+                            <input type="hidden" name="act" value="login">
+                        </p>
+                    </div>
+                    <div class="modal-footer" style="text-align: center">
+                        <button type="button" class="btn btn-success btn-round">Войти</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Всплывающее окно регистрации -->
+        <div id="modalRegistration" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form class="form-signin ajax" method="post" action="./ajax.php">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Зарегистрировать команду</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="main-error alert alert-error hide"></div>
+                            <p>
+                                <input name="username" type="text" class="input-block-level form-control" required="true" placeholder="Имя команды" autofocus>
+                                <input name="phone" type="text" class="input-block-level form-control" required="true" placeholder="Телефон">
+                                <input name="email" type="text" class="input-block-level form-control" placeholder="Почта">
+                                <input name="password1" type="password" class="input-block-level form-control" required="true" placeholder="Пароль">
+                                <input name="password2" type="password" class="input-block-level form-control" required="true" placeholder="Повторите пароль">
+                                <input type="hidden" name="act" value="register">
+                            </p>
+                        </div>
+                        <div class="modal-footer" style="text-align: center;">
+                            <button type="submit" class="btn btn-success btn-round">Зарегистрировать</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
 </body>
 <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.js" type="text/javascript"></script>
 <script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
-    <script src="assets/js/counter.js"></script>
+<script src="assets/js/counter.js"></script>
 <script src="assets/js/owl-carousel/owl.carousel.min.js"></script>
 <script>
     $(function () {
