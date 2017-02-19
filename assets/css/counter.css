@@ -24,7 +24,7 @@
 	width: 120px;
 	height: 120px;
 	margin: 0 auto;
-	background: rgba(0,0,0,.05);
+	background: rgba(0,0,0,.2);
 	padding-top: 20px;
 }
 .bs-countdown-timer .numcard-number {

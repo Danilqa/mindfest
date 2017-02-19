@@ -31,3 +31,18 @@ body {
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+.input-block-level {
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 2px solid;
+  box-sizing:border-box;
+  font-size:18px; 
+  padding:10px;
+  margin-bottom:30px;  
+}
+
+.form-singin input-block-level {
+    padding: 10px;
+}

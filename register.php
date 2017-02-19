@@ -37,7 +37,7 @@ require_once './classes/Auth.class.php';
       <form class="form-signin ajax" method="post" action="./ajax.php">
         <div class="main-error alert alert-error hide"></div>
 
-        <h2 class="form-signin-heading">Зарегистировать команду</h2>
+        
         <input name="username" type="text" class="input-block-level" required="true" placeholder="Имя команды" autofocus>
         <input name="phone" type="text" class="input-block-level" required="true" placeholder="Телефон">
         <input name="email" type="text" class="input-block-level" placeholder="Почта">

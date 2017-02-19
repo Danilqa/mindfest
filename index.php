@@ -14,14 +14,16 @@ require_once 'classes/Auth.class.php';
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/mindfest.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Awesome Landing Page by Creative Tim</title>
+    <title>MindFest</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/landing-page.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +54,7 @@ require_once 'classes/Auth.class.php';
                             <img src="assets/img/new_logo.png" alt="Creative Tim Logo">
                         </div>
                         <div class="brand">
-                            MindFest
+                            MINDFEST
                         </div>
                     </div>
                 </a>
@@ -120,10 +122,10 @@ require_once 'classes/Auth.class.php';
                         <div class="description text-center">
                             <h4 class="header-text">Партнёры</h4>
                             <div class="owl-carousel owl-theme">
-                                <div> <img class="logotip" src="assets/img/logos/VARGGRAD.png"> </div>
-                                <div> <img class="logotip" src="assets/img/logos/logo-970x964.png"> </div>
-                                <div> <img class="logotip" src="assets/img/logos/imp.png"> </div>
-                                <div> Your Content </div>
+                                <div><a href="http://varggrad.ru/"><img class="logotip" src="assets/img/logos/vargrad.png"></a></div>
+                                <div><a href="http://ziferblat.net/"><img class="logotip" src="assets/img/logos/cifer.png"></a></div>
+                                <div><a href="http://www.ipm.ru/"><img class="logotip" src="assets/img/logos/imp.png"></a></div>
+                                <div><a href="http://hardysbarbershop.ru/"><img class="logotip" src="assets/img/logos/hardys.png"></a></div>
                                 <div> Your Content </div>
                                 <div> Your Content </div>
                                 <div> Your Content </div>
@@ -148,14 +150,14 @@ require_once 'classes/Auth.class.php';
                     </ul>
                 </nav>
                 <div class="social-area pull-right">
-                    <a class="btn btn-social btn-facebook btn-simple">
-                        <i class="fa fa-facebook-square"></i>
+                    <a class="btn btn-social btn-vk btn-simple" href="https://vk.com/mind_guests">
+                        <i class="fa fa-vk"></i>
                     </a>
-                    <a class="btn btn-social btn-twitter btn-simple">
+                    <!--<a class="btn btn-social btn-twitter btn-simple">
                         <i class="fa fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-social btn-pinterest btn-simple">
-                        <i class="fa fa-pinterest"></i>
+                    </a>-->
+                    <a class="btn btn-social btn-instagram btn-simple" href="https://www.instagram.com/mind_guests/">
+                        <i class="fa fa-instagram"></i>
                     </a>
                 </div>
                 <div class="copyright">
@@ -212,9 +214,8 @@ require_once 'classes/Auth.class.php';
                       <form class="form-signin ajax" method="post" action="./ajax.php">
                         <div class="main-error alert alert-error hide"></div>
 
-                        <h2 class="form-signin-heading">Войти</h2>
-                        <input name="username" type="text" class="input-block-level" placeholder="Username" autofocus>
-                        <input name="password" type="password" class="input-block-level" placeholder="Password">
+                        <input name="username" type="text" class="input-block-level" placeholder="Имя команды" autofocus><br><br>
+                        <input name="password" type="password" class="input-block-level" placeholder="Пароль"><br><br>
                         <label class="checkbox">
                           <input name="remember-me" type="checkbox" value="remember-me" checked> Запомнить меня
                         </label>
@@ -241,14 +242,14 @@ require_once 'classes/Auth.class.php';
                           <form class="form-signin ajax" method="post" action="./ajax.php">
                             <div class="main-error alert alert-error hide"></div>
 
-                            <h2 class="form-signin-heading">Зарегистировать команду</h2>
-                            <input name="username" type="text" class="input-block-level" required="true" placeholder="Имя команды" autofocus>
-                            <input name="phone" type="text" class="input-block-level" required="true" placeholder="Телефон">
-                            <input name="email" type="text" class="input-block-level" placeholder="Почта">
-                            <input name="password1" type="password" class="input-block-level" required="true" placeholder="Пароль">
-                            <input name="password2" type="password" class="input-block-level" required="true" placeholder="Повторите пароль">
+                            
+                            <input name="username" type="text" class="input-block-level" required="true" placeholder="Имя команды" autofocus><br><br>
+                            <input name="phone" type="text" class="input-block-level" required="true" placeholder="Телефон"><br><br>
+                            <input name="email" type="text" class="input-block-level" placeholder="Почта"><br><br>
+                            <input name="password1" type="password" class="input-block-level" required="true" placeholder="Пароль"><br><br>
+                            <input name="password2" type="password" class="input-block-level" required="true" placeholder="Повторите пароль"><br><br>
                             <input type="hidden" name="act" value="register">
-                            <button class="btn btn-large btn-primary" type="submit">Зарегистировать команду</button>
+                              <button class="btn btn-large btn-primary" type="submit">Зарегистировать команду</button>
                           </form>
                         </div>
                 </div>
