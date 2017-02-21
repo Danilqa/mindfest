@@ -22,6 +22,8 @@ require_once 'classes/Auth.class.php';
 
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/landing-page.css" rel="stylesheet" />
+    <link href="assets/css/custom-checkboxes.css" rel="stylesheet" />
+    <link href="assets/css/progress-bar.css" rel="stylesheet" />
     <link href="assets/css/custom.css" rel="stylesheet" />
     
 
@@ -50,9 +52,9 @@ require_once 'classes/Auth.class.php';
                 </button>
                 <a href="http://www.creative-tim.com">
                     <div class="logo-container">
-                        <div class="logo">
+                        <!--<div class="logo">
                             <img src="assets/img/new_logo.png" alt="Creative Tim Logo">
-                        </div>
+                        </div>-->
                         <div class="brand">
                             MINDFEST
                         </div>
@@ -105,7 +107,25 @@ require_once 'classes/Auth.class.php';
                 </div>
             </div>
         </div>
-        <div class="section section-gray section-clients">
+        
+        <?php if (Auth\User::isAuthorized()): ?>
+        <div class="section">
+            <div class="container text-center">
+                <h4 class="header-text">Вопросы</h4>
+                <p>
+                    Сколько раз вашему маму чпокали за гаражами бомжы?
+                    <input type="text" class="form-input-underline mt-20" placeholder="Ваш ответ"><br>
+                    <a href="#" class="btn btn-large btn-primary mt-20">Ответить</a>
+                </p><br>
+                <div class="progress mt-20">
+                    <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div>
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>       
+        <?php endif; ?>
+        
+        <div class="section section-gray">
             <div class="container text-center">
                 <h4 class="header-text">Что такое </h4>
                 <p>
@@ -122,13 +142,10 @@ require_once 'classes/Auth.class.php';
                         <div class="description text-center">
                             <h4 class="header-text">Партнёры</h4>
                             <div class="owl-carousel owl-theme">
-                                <div><a href="http://varggrad.ru/"><img class="logotip" src="assets/img/logos/vargrad.png"></a></div>
-                                <div><a href="http://ziferblat.net/"><img class="logotip" src="assets/img/logos/cifer.png"></a></div>
-                                <div><a href="http://www.ipm.ru/"><img class="logotip" src="assets/img/logos/imp.png"></a></div>
-                                <div><a href="http://hardysbarbershop.ru/"><img class="logotip" src="assets/img/logos/hardys.png"></a></div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
+                                <div><a href="http://varggrad.ru/"><img class="logotip" height=200 src="assets/img/logos/vargrad.png"></a></div>
+                                <div><a href="http://ziferblat.net/"><img class="logotip" height=200 src="assets/img/logos/cifer.png"></a></div>
+                                <div><a href="http://www.ipm.ru/"><img class="logotip" height=200 src="assets/img/logos/imp.png"></a></div>
+                                <div><a href="http://hardysbarbershop.ru/"><img class="logotip" height=200 src="assets/img/logos/hardys.png"></a></div>
                             </div>
                         </div>
                     </div>
@@ -178,20 +195,20 @@ require_once 'classes/Auth.class.php';
                         <h4 class="modal-title">Личный кабинет</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="form-edit ajax" method="post" action="./ajax.php">
+                      <form class="form-edit ajax text-center" method="post" action="./ajax.php">
                         <div class="main-error alert alert-error hide"></div>
 
-                        <input name="username" type="text" value="<?php echo $user->getName(); ?>" class="input-block-level" required="true" placeholder="Имя команды" autofocus>
-                        <input name="phone" type="text" value="<?php echo $user->getPhone(); ?>" class="input-block-level" required="true" placeholder="Телефон">
-                        <input name="email" type="text" value="<?php echo $user->getEmail(); ?>" class="input-block-level" placeholder="Почта">
+                        <input name="username" type="text" value="<?php echo $user->getName(); ?>" class="input-block-level form-input-underline" required="true" placeholder="Имя команды" autofocus>
+                        <input name="phone" type="text" value="<?php echo $user->getPhone(); ?>" class="input-block-level form-input-underline" required="true" placeholder="Телефон">
+                        <input name="email" type="text" value="<?php echo $user->getEmail(); ?>" class="input-block-level form-input-underline" placeholder="Почта">
                         <input type="hidden" name="act" value="edit">
-                        <button class="btn btn-large btn-primary" type="submit">Изменить данные</button>
+                        <button class="btn btn-large btn-primary mt-20" type="submit">Изменить данные</button>
 
                       </form>
-                      <form class="ajax" method="post" action="./ajax.php">
+                      <form class="ajax text-right" method="post" action="./ajax.php">
                           <input type="hidden" name="act" value="logout">
                           <div class="form-actions">
-                              <button class="btn btn-large btn-primary" type="submit">Выйти</button>
+                              <button class="btn btn-large btn-primary mt-20" type="submit">Выйти</button>
                           </div>
                       </form>
                     </div>
@@ -210,15 +227,19 @@ require_once 'classes/Auth.class.php';
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Войти</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-center">
                       <form class="form-signin ajax" method="post" action="./ajax.php">
                         <div class="main-error alert alert-error hide"></div>
 
-                        <input name="username" type="text" class="input-block-level" placeholder="Имя команды" autofocus><br><br>
-                        <input name="password" type="password" class="input-block-level" placeholder="Пароль"><br><br>
-                        <label class="checkbox">
-                          <input name="remember-me" type="checkbox" value="remember-me" checked> Запомнить меня
-                        </label>
+                        <input name="username" type="text" class="input-block-level form-input-underline" placeholder="Имя команды" autofocus><br><br>
+                        <input name="password" type="password" class="input-block-level form-input-underline" placeholder="Пароль"><br><br>
+    
+                        <div class="checkbox checkbox-success">
+                            <input id="checkbox3" name="remember-me" value="remember-me" type="checkbox">
+                            <label for="checkbox3">
+                                Запомнить меня
+                            </label>
+                        </div>
                         <input type="hidden" name="act" value="login">
                         <button class="btn btn-large btn-primary" type="submit">Войти</button>
                       </form>
@@ -239,15 +260,15 @@ require_once 'classes/Auth.class.php';
                             <h4 class="modal-title">Зарегистрировать команду</h4>
                         </div>
                         <div class="modal-body">
-                          <form class="form-signin ajax" method="post" action="./ajax.php">
+                          <form class="form-signin ajax text-center" method="post" action="./ajax.php">
                             <div class="main-error alert alert-error hide"></div>
 
                             
-                            <input name="username" type="text" class="input-block-level" required="true" placeholder="Имя команды" autofocus><br><br>
-                            <input name="phone" type="text" class="input-block-level" required="true" placeholder="Телефон"><br><br>
-                            <input name="email" type="text" class="input-block-level" placeholder="Почта"><br><br>
-                            <input name="password1" type="password" class="input-block-level" required="true" placeholder="Пароль"><br><br>
-                            <input name="password2" type="password" class="input-block-level" required="true" placeholder="Повторите пароль"><br><br>
+                            <input name="username" type="text" class="input-block-level form-input-underline" required="true" placeholder="Имя команды" autofocus><br><br>
+                            <input name="phone" type="text" class="input-block-level form-input-underline" required="true" placeholder="Телефон"><br><br>
+                            <input name="email" type="text" class="input-block-level form-input-underline" placeholder="Почта"><br><br>
+                            <input name="password1" type="password" class="input-block-level form-input-underline" required="true" placeholder="Пароль"><br><br>
+                            <input name="password2" type="password" class="input-block-level form-input-underline" required="true" placeholder="Повторите пароль"><br><br>
                             <input type="hidden" name="act" value="register">
                               <button class="btn btn-large btn-primary" type="submit">Зарегистировать команду</button>
                           </form>
@@ -275,7 +296,7 @@ require_once 'classes/Auth.class.php';
     owl.owlCarousel({
         items: 4,
         loop: true,
-        margin: 10,
+        margin: 60,
         autoplay: true,
         autoplayTimeout: 1000,
         autoplayHoverPause: true

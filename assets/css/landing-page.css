@@ -406,7 +406,7 @@ a:focus, a:active {
 }
 
 .section {
-  padding: 30px 0;
+  padding: 30px 0 70px 0;
   position: relative;
   background-color: #FFFFFF;
 }
@@ -938,7 +938,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232526', end
 }
 .landing-page .parallax .parallax-background img{
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
 }
 .landing-page .parallax .parallax-image{
@@ -1147,10 +1147,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232526', end
         margin: 0 auto;
         margin-top: 20px;
    }
-
+/*
 .logotip {
-    height: 30%;
-}
+    height: 20%;
+    
+}*/
 
     .landing-page .section-features .card.card-blue{ 
       border-color: #CCE7F5;

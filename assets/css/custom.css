@@ -1,4 +1,25 @@
-.checkbox {
-    padding: 0px 20px;
-} /*Отступ чекбокса во входе*/
+@font-face {
+    font-family: "Devious";
+    src: url('../fonts/DEVIOUS.otf') format('otf');
+    src: url('../fonts/DEVIOUS.ttf') format('truetype');
+}
 
+/* Отступ чекбокса во входе */
+
+
+.form-input-underline {
+    width: 80%;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+    padding: 8px 0px;
+}
+
+.owl-theme > div {
+    padding: 0 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
