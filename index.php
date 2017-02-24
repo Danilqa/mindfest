@@ -110,6 +110,11 @@ require_once 'classes/Auth.class.php';
         
         <?php if (Auth\User::isAuthorized()): ?>
         <div class="section">
+            <h4 class="text-progress header-text text-center">ВАШ ПРОГРЕСС</h4>
+            <div class="progress mt-20">
+                <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div>
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
             <div class="container text-center">
                 <h4 class="header-text">Вопросы</h4>
                 <p>
@@ -117,17 +122,14 @@ require_once 'classes/Auth.class.php';
                     <input type="text" class="form-input-underline mt-20" placeholder="Ваш ответ"><br>
                     <a href="#" class="btn btn-large btn-primary mt-20">Ответить</a>
                 </p><br>
-                <div class="progress mt-20">
-                    <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div>
-                    <div class="progress-bar" style="width: 70%;"></div>
-                </div>
+                
             </div>
         </div>       
         <?php endif; ?>
         
         <div class="section section-gray">
             <div class="container text-center">
-                <h4 class="header-text">Что такое </h4>
+                <h4 class="header-text whatisit">Что такое </h4>
                 <p>
                     Build customer confidence by listing your users! Anyone who has used your service and has been pleased with it should have a place here! From Fortune 500 to start-ups, all your app enthusiasts will be glad to be featured in this section. Moreover, users will feel confident seing someone vouching for your product!
                     <br>
@@ -140,7 +142,7 @@ require_once 'classes/Auth.class.php';
                 <div class="row">
                     <div class="col-md-6">
                         <div class="description text-center">
-                            <h4 class="header-text">Партнёры</h4>
+                            <h4 class="header-text partners">Партнёры</h4>
                             <div class="owl-carousel owl-theme">
                                 <div><a href="http://varggrad.ru/"><img class="logotip" height=200 src="assets/img/logos/vargrad.png"></a></div>
                                 <div><a href="http://ziferblat.net/"><img class="logotip" height=200 src="assets/img/logos/cifer.png"></a></div>
@@ -156,7 +158,7 @@ require_once 'classes/Auth.class.php';
 
 
         <footer class="footer">
-            <div class="container">
+            <div class="container for_footer">
                 <nav class="pull-left">
                     <ul>
                         <li>

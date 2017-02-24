@@ -2,8 +2,8 @@
     position:absolute;
 	margin-top:-10px;
 	z-index:1;
-	height:40px;
-	width:40px;
+	height:30px;
+	width:30px;
 	border-radius:25px;
 	
 }
@@ -17,7 +17,7 @@
 	left:75%;
 }
 .primary-color{
-	background-color:#4989bd;
+	background-color:#249991;
 }
 .success-color{
 	background-color:#5cb85c;
