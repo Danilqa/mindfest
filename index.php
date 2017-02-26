@@ -295,7 +295,7 @@ require_once 'classes/Auth.class.php';
     
 <?php if (Auth\User::isAuthorized()): ?>
     <script>
-        var current_question = <?php echo $user->getCurrentQuestion(); ?>;   
+        var current_question = <?php if ( $user->getCurrentQuestion() ) { echo $user->getCurrentQuestion(); } else { echo 0; } ?>;   
     </script>
     <script src="assets/js/quiz.js"></script>
 <?php endif; ?>
