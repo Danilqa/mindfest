@@ -25,7 +25,7 @@ require_once 'classes/Auth.class.php';
     <link href="assets/css/custom-checkboxes.css" rel="stylesheet" />
     <link href="assets/css/progress-bar.css" rel="stylesheet" />
     <link href="assets/css/custom.css" rel="stylesheet" />
-    
+    <link href="assets/css/sweetalert2.min.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,16 +112,19 @@ require_once 'classes/Auth.class.php';
         <div class="section">
             <h4 class="text-progress header-text text-center">ВАШ ПРОГРЕСС</h4>
             <div class="progress mt-20">
-                <div class="one primary-color"></div><div class="two primary-color"></div><div class="three no-color"></div>
+                <div class="one primary-color"></div>
+                <div class="two primary-color"></div>
+                <div class="three no-color"></div>
                 <div class="progress-bar" style="width: 70%;"></div>
             </div>
-            <div class="container text-center">
+            <div class="container text-center quiz">
                 <h4 class="header-text">Вопросы</h4>
-                <p>
+                <p class="body-text">
                     Сколько раз вашему маму чпокали за гаражами бомжы?
-                    <input type="text" class="form-input-underline mt-20" placeholder="Ваш ответ"><br>
-                    <a href="#" class="btn btn-large btn-primary mt-20">Ответить</a>
-                </p><br>
+                </p>
+                    <input type="text" class="form-input-underline mt-20 input-answer" placeholder="Ваш ответ"><br>
+                    <a href="#" class="btn btn-large btn-primary btn-answer mt-20">Ответить</a>
+                <br>
                 
             </div>
         </div>       
@@ -284,10 +287,19 @@ require_once 'classes/Auth.class.php';
 <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+<script src="assets/js/sweetalert2.min.js"></script>
 <script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
 <script src="assets/js/counter.js"></script>
 <script src="assets/js/owl-carousel/owl.carousel.min.js"></script>
 <script src="assets/js/ajax-form.js"></script>
+    
+<?php if (Auth\User::isAuthorized()): ?>
+    <script>
+        var current_question = <?php echo $user->getCurrentQuestion(); ?>;   
+    </script>
+    <script src="assets/js/quiz.js"></script>
+<?php endif; ?>
+    
 <script>
     $(function () {
         $('.countdown-timer').bs_countdown_timer();

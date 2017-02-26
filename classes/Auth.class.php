@@ -106,6 +106,21 @@ class User
         }
         return $row["email"];
     }
+    
+    public function getCurrentQuestion() {
+        $query = "select * from users where id = :id limit 1";
+        $sth = $this->db->prepare($query);
+        $sth->execute(
+            array(
+                ":id" => $_SESSION["user_id"]
+            )
+        );
+        $row = $sth->fetch();
+        if (!$row) {
+            return false;
+        }
+        return $row["answered"];   
+    }
 
     public function authorize($username, $password, $remember=false)
     {
@@ -214,6 +229,35 @@ class User
                     ':username' => $username,
                     ':phone' => $phone,
                     ':email' => $email,
+                )
+            );
+            $this->db->commit();
+        } catch (\PDOException $e) {
+            $this->db->rollback();
+            echo "Database error: " . $e->getMessage();
+            die();
+        }
+
+        if (!$result) {
+            $info = $sth->errorInfo();
+            printf("Ошибка базы данных %d %s", $info[1], $info[2]);
+            die();
+        } 
+
+        return $result;
+    }
+    
+    public function addAnswer($number) {
+
+        $query = "update users set answered=:answered where id = :id";
+        $sth = $this->db->prepare($query);
+
+        try {
+            $this->db->beginTransaction();
+            $result = $sth->execute(
+                array(
+                    ':id' => $_SESSION["user_id"],
+                    ':answered' => $number,
                 )
             );
             $this->db->commit();

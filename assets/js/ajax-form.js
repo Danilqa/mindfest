@@ -52,6 +52,13 @@
                         window.location.href = data.data.redirect;
                     }
                 }
+            },
+            answer: function ($form, data) {
+                if (data.status === 'ok') {
+                    if (data.data && data.data.redirect) {
+                        window.location.href = data.data.redirect;
+                    }
+                }
             }
 
         }
