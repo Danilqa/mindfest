@@ -26,7 +26,18 @@ $.ajax({
     },
 });
 
+addProgress(current_question);
+
 /* =========  Функции  =======  */
+
+
+function addProgress(number) {
+    $(".progress > li").removeClass("is-active");
+    for (var i = 0; i < number; i++) {
+        $(".progress > li").eq(i).addClass("is-complete");
+    }
+    $(".progress > li").eq(number++).addClass("is-active");
+}
 
 function showQuestion(question) {
     body_text.html( questions[question] );
@@ -53,6 +64,7 @@ function answerQuestion(number, answer) {
             console.log(data);
             if (data["status"] == "correct") {
                 current_question++;
+                addProgress(current_question);
                 showCurrentQuestion();
                 input_answer.val("");
                 

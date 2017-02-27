@@ -26,6 +26,7 @@ require_once 'classes/Auth.class.php';
     <link href="assets/css/progress-bar.css" rel="stylesheet" />
     <link href="assets/css/custom.css" rel="stylesheet" />
     <link href="assets/css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="assets/css/progress.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -109,14 +110,26 @@ require_once 'classes/Auth.class.php';
         </div>
         
         <?php if (Auth\User::isAuthorized()): ?>
+        
+        <?php $questions_count = 4; ?>
+        
         <div class="section">
             <h4 class="text-progress header-text text-center">ВАШ ПРОГРЕСС</h4>
-            <div class="progress mt-20">
-                <div class="one primary-color"></div>
-                <div class="two primary-color"></div>
-                <div class="three no-color"></div>
-                <div class="progress-bar" style="width: 70%;"></div>
-            </div>
+            <ol class="progress">
+            <li class="is-active" data-step="1">
+                Вопрос 1
+            </li>  
+            <? for ($i = 1; $i < $questions_count-1; $i++): ?>
+                <li data-step="2">
+                    Вопрос <?php echo $i; ?>
+                </li>    
+            <? endfor; ?>
+
+              <li data-step="3" class="progress__last">
+                Вопрос 3
+              </li>
+            </ol>
+
             <div class="container text-center quiz">
                 <h4 class="header-text">Вопросы</h4>
                 <p class="body-text">
@@ -322,5 +335,5 @@ require_once 'classes/Auth.class.php';
         owl.trigger('stop.owl.autoplay');
     });
 </script>
-
+    
 </html>
