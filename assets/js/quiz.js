@@ -74,7 +74,7 @@ function answerQuestion(number, answer) {
                         title: 'Поздравляем',
                         text: 'Вы справились со всеми заданиями и теперь можете пососать у Дани',
                         type: 'success',
-                        confirmButtonClass: 'btn-round btn-hover info',
+                        confirmButtonClass: 'btn btn-large btn-success',
                         confirmButtonText: 'Ееее! Давайте сюда его писюн',
                     }); 
                 }
@@ -83,7 +83,7 @@ function answerQuestion(number, answer) {
                     title: 'Неправильный ответ :(',
                     text: 'Попробуйте ещё раз',
                     type: 'error',
-                    confirmButtonClass: 'btn-round btn-hover info',
+                    confirmButtonClass: 'btn btn-large btn-info',
                     confirmButtonText: 'Хорошо!',
                 }); 
                 console.log('0');
