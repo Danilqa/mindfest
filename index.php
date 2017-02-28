@@ -115,19 +115,19 @@ require_once 'classes/Auth.class.php';
         
         <div class="section">
             <h4 class="text-progress header-text text-center">ВАШ ПРОГРЕСС</h4>
-            <ol class="progress">
-            <li class="is-active" data-step="1">
-                Вопрос 1
-            </li>  
-            <? for ($i = 1; $i < $questions_count-1; $i++): ?>
-                <li data-step="2">
-                    Вопрос <?php echo $i; ?>
-                </li>    
-            <? endfor; ?>
+            <ol class="progress-line">
+                <li data-step="1">
+                    Вопрос 1
+                </li>
+                <? for ($i = 1; $i < $questions_count-1; $i++): ?>
+                    <li data-step="<?php echo $i+1; ?>">
+                        Вопрос <?php echo $i+1; ?>
+                    </li>    
+                <? endfor; ?>
 
-              <li data-step="3" class="progress__last">
-                Вопрос 3
-              </li>
+                  <li data-step="3" class="progress__last">
+                    Вопрос 3
+                  </li>
             </ol>
 
             <div class="container text-center quiz">

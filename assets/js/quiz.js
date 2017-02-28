@@ -7,6 +7,7 @@ quiz = $('.quiz');
 body_text = $(".quiz").find(".body-text");
 input_answer = $(".input-answer");
 btn_answer = $(".btn-answer");
+progress_bar_element = $(".progress-line > li");
 
 $.ajax({
     type: "POST",
@@ -32,11 +33,11 @@ addProgress(current_question);
 
 
 function addProgress(number) {
-    $(".progress > li").removeClass("is-active");
+    progress_bar_element.removeClass("is-active");
     for (var i = 0; i < number; i++) {
-        $(".progress > li").eq(i).addClass("is-complete");
+        progress_bar_element.eq(i).addClass("is-complete");
     }
-    $(".progress > li").eq(number++).addClass("is-active");
+    progress_bar_element.eq(number++).addClass("is-active");
 }
 
 function showQuestion(question) {

@@ -40,3 +40,7 @@
 .for_footer {
     margin-top: 0px;
 }
+
+.btn {
+    outline: none;
+}
