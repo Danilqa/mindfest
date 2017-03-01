@@ -196,7 +196,7 @@ require_once 'classes/Auth.class.php';
                     </a>
                 </div>
                 <div class="copyright">
-                    &copy; 2017 <a href="#">Креативные парни</a>
+                    &copy; 2017 <a href="#">Создано<i class="icon icon-logo"></i></a>
                 </div>
             </div>
         </footer>
